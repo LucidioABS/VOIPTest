@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainTableViewController.swift
 //  VOIPTest
 //
 //  Created by Lucídio Andrade Barbosa de Souza on 26/03/20.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainTableViewController: UITableViewController {
+    
+    //private let cellID = "cellID"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
     }
 
 
 }
-
