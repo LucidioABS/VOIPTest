@@ -10,14 +10,9 @@ import UIKit
 import CoreData
 
 class Profile: Decodable {
-    // Static Properties
     
     static let photoImageDownloadedNN = Notification.Name("com.VOIPTest.Profile.photoImageDownloadedNN")
     static let thumbnailImageDownloadedNN = Notification.Name("com.VOIPTest.Profile.thumbnailImageDownloadedNN")
-    
-    // Static Methods
-    // Public Types
-    // Public Properties
     
     let albumId: Int
     let id: Int
@@ -193,4 +188,3 @@ class Profile: Decodable {
         }
     }
 }
-

@@ -11,6 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     private let cellID = "cellID"
+    let detailViewController = DetailViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +27,46 @@ class MainTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
+
 }
+
+extension MainTableViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if let albumCount = Database.profiles.last?.albumId {
+            return albumCount
+        }
+        else {
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Database.profiles.filter({$0.albumId == section + 1}).count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCell
+        let album = Database.profiles.filter({$0.albumId == indexPath.section + 1})
+        cell.fill(with: album[indexPath.row])
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.frame.height/2
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let album = Database.profiles.filter({$0.albumId == indexPath.section + 1})
+        detailViewController.profile = album[indexPath.row]
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Album \(section + 1)"
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32.0
+    }
+}
+

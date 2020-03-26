@@ -57,17 +57,9 @@ class TableViewCell: UITableViewCell {
         return label
     }()
     
-    let dividerLineView: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
-    }()
-
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        isUserInteractionEnabled = false
+        
         
         addSubview(smallImageview)
         addSubview(title)
@@ -84,8 +76,7 @@ class TableViewCell: UITableViewCell {
         title.rightAnchor.constraint(equalTo: rightAnchor, constant: -14).isActive = true
         title.leftAnchor.constraint(equalTo: leftAnchor, constant: 14).isActive = true
         title.topAnchor.constraint(equalTo: smallImageview.bottomAnchor).isActive = true
-        
-        
+                
         id.heightAnchor.constraint(equalToConstant: 30).isActive = true
         id.rightAnchor.constraint(equalTo: rightAnchor, constant: -14).isActive = true
         id.leftAnchor.constraint(equalTo: leftAnchor, constant: 14).isActive = true

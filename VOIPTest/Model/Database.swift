@@ -10,13 +10,11 @@ import UIKit
 import CoreData
 
 class Database {
-    // Static Properties
+    
     
     static let didGetAPIInformationNN = Notification.Name("com.VOIPTest.Database.didGetAPIInformationNN")
     
     static private(set) var profiles: [Profile] = []
-    
-    // Static Methods
     
     static func getAPI() {
         if let resource = Database.getAPIResource() {
@@ -89,17 +87,5 @@ class Database {
         return nil
     }
     
-    // Public Types
-    // Public Properties
-    // Public Methods
-    // Initialisation/Lifecycle Methods
     
-    private init() {
-        
-    }
-    
-    // Override Methods
-    // Private Types
-    // Private Properties
-    // Private Methods
 }
