@@ -13,6 +13,7 @@
 		5EF4E7C3242CEC44000F20D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4E7C2242CEC44000F20D6 /* Assets.xcassets */; };
 		5EF4E7C6242CEC44000F20D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF4E7C4242CEC44000F20D6 /* LaunchScreen.storyboard */; };
 		5EF4E7D1242CEFC3000F20D6 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4E7D0242CEFC3000F20D6 /* MainTableViewController.swift */; };
+		5EF4E7D3242CF083000F20D6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4E7D2242CF083000F20D6 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5EF4E7C5242CEC44000F20D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF4E7C7242CEC44000F20D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF4E7D0242CEFC3000F20D6 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		5EF4E7D2242CF083000F20D6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				5EF4E7B8242CEC43000F20D6 /* SceneDelegate.swift */,
+				5EF4E7D2242CF083000F20D6 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF4E7D3242CF083000F20D6 /* TableViewCell.swift in Sources */,
 				5EF4E7D1242CEFC3000F20D6 /* MainTableViewController.swift in Sources */,
 				5EF4E7B7242CEC43000F20D6 /* AppDelegate.swift in Sources */,
 				5EF4E7B9242CEC43000F20D6 /* SceneDelegate.swift in Sources */,
