@@ -12,6 +12,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    private weak var profile: Profile?
+    
     
     let smallImageview: UIImageView = {
         let iv = UIImageView()
@@ -83,6 +85,7 @@ class TableViewCell: UITableViewCell {
         title.leftAnchor.constraint(equalTo: leftAnchor, constant: 14).isActive = true
         title.topAnchor.constraint(equalTo: smallImageview.bottomAnchor).isActive = true
         
+        
         id.heightAnchor.constraint(equalToConstant: 30).isActive = true
         id.rightAnchor.constraint(equalTo: rightAnchor, constant: -14).isActive = true
         id.leftAnchor.constraint(equalTo: leftAnchor, constant: 14).isActive = true
@@ -101,13 +104,20 @@ class TableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setPhotoCellWith() {
-
+    func fill(with profile: Profile) {
+        self.profile = profile
+        smallImageview.image = profile.thumbnailImage
+        id.text = "ID: \(profile.id)"
+        title.text = profile.title
+        
+        if smallImageview.image == nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(thumbnailImageDidDownloaded), name: Profile.thumbnailImageDownloadedNN, object: profile)
+        }
+    }
+    
+    @objc private func thumbnailImageDidDownloaded() {
         DispatchQueue.main.async {
-            self.title.text = "ondfoudwbfnsdoifnionow"
-            self.albumID.text = "1"
-            self.id.text = "1"
-            self.smallImageview.backgroundColor = .red
+            self.smallImageview.image = self.profile?.thumbnailImage
         }
     }
 }
